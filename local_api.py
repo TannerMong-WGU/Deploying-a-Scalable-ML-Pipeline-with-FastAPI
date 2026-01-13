@@ -2,13 +2,12 @@ import json
 
 import requests
 
-# TODO: send a GET using the URL http://127.0.0.1:8000
-r = None # Your code here
+get_url = "http://127.0.0.1:8000/"
+r = requests.get(get_url)
 
-# TODO: print the status code
-# print()
-# TODO: print the welcome message
-# print()
+# Print status code and welcome message
+print("GET request status code:", r.status_code)
+print("GET request response:", r.json())
 
 
 
@@ -29,10 +28,9 @@ data = {
     "native-country": "United-States",
 }
 
-# TODO: send a POST using the data above
-r = None # Your code here
+post_url = "http://127.0.0.1:8000/data/"
+r = requests.post(post_url, json=data)
 
-# TODO: print the status code
-# print()
-# TODO: print the result
-# print()
+# Print status code and prediction result
+print("POST request status code:", r.status_code)
+print("POST request response:", r.json())
